@@ -148,6 +148,17 @@ var digestAuthRequest = function (method, url, username, password) {
 		}
 	}
 	this.makeAuthenticatedRequest= function() {
+		console.log(
+			'username: ' + username +
+			'realm' + self.realm +
+			'nonce' + self.nonce +
+			'url' + url +
+			'response' + self.response +
+			'opaque' + self.opaque +
+			'qop' + self.qop +
+			'nc'+ self.nc +
+			'cnonce' + self.cnonce
+		);
 
 		self.response = self.formulateResponse();
 		self.authenticatedRequest = new XMLHttpRequest();
